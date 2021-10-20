@@ -25,7 +25,7 @@ func (bg *BannerGrabber) Grab() {
 }
 
 func (bg *BannerGrabber) Grabs() (string, error) {
-	return res, err
+	return curlGrab(bg.URL)
 }
 
 func curlGrab(address string) (res string, err error) {
