@@ -28,10 +28,10 @@ func (bg *BannerGrabber) Grabs() (string, error) {
 	return res, err
 }
 
-func curlGrab(cURL string, address string) (res string, err error) {
+func curlGrab(address string) (res string, err error) {
 	cURL, ok := exec.LookPath("curl")
 
-	if !ok {
+	if ok != nil {
 		return "", errors.New("E: cURL not found!")
 	}
 
